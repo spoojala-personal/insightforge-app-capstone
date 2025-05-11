@@ -62,7 +62,7 @@ docs = [
 ]
 
 # --- Step 5: OpenAI Embeddings + FAISS ---
-embeddings = OpenAIEmbeddings()
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 db = FAISS.from_documents(docs, embeddings)
 retriever = db.as_retriever()
 
